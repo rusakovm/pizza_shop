@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+{% if newcart == True %}
+    <div class="cart_db">
+        <div class="text-new-cart">
+            <a href="/" class="none-cart">Добавить первый заказ.</a>
+        </div>
+    </div>
+{% else %}
+    {% for el in cart_user %}
+    <form method="post">
+        <div class="cart_db">
+            <div class="text-cart">
+                    <p>Название пиццы: {{ el[0] }}, Кол-во: {{ el[2] }}.</p>
+             </div>
+            <input type="hidden" name="id" value="{{ el[1] }}">
+            <input type="submit" class="btn-btn-sucess" class="button-zakaz" value="Удалить заказ">
+
+        </div>
+    </form>
+    {% endfor %}
+    <div class="cart_db-down">
+        <div class="text-new-cart">
+            <a href="/" class="none-cart">Добавить Новый Заказ.</a>
+        </div>
+        <div class="text-new-cart">
+            <a href="/createzakaz" class="none-cart">Перейти к оплате.</a>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

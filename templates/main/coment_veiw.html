@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+
+</div>
+{% for el in articles %}
+<div class="cart_db">
+    <div class="text-comment">
+        <p>{{el[0]}}</p>
+        <p>Автор комментария: {{ el[1] }}</p>
+    </div>
+</div>
+{% endfor %}
+<div class="cart_db-down">
+    <div class="text-new-cart">
+        <a href="/createcomment" class="none-cart">Оставить коментарий </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Создание Аккаунта</title>
+    <link rel="stylesheet" href="./static/css/reg.css">
+</head>
+<body>
+    <div class="cont_reg">
+        <h1>Создать аккаунт</h1>
+        <p>Заполните эту форму, чтобы создать учетную запись.</p>
+        <form method="post">
+            <label for="user_name"><b>Email</b></label>
+            <input type="text" class="form-control" placeholder="Enter Email" id="user_name" name="user_name" required><br>
+            <label for="user_passwod"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password"  name="user_passwod" id="user_passwod" class="input-pass">
+            <input type="checkbox" class="password-checkbox"> Показать пароль<br>
+            <input type="submit" class="btn-btn-sucess" value="Зарегистрироваться">
+            <div class="container signin">
+                <p>Already have an account? <a href="/voity">Sign in</a>.</p>
+            </div>
+        </form>
+    </div>
+    <script src="./static/js/Akk.js"></script>
+</body>
+</html>

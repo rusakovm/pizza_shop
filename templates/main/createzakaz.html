@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+
+{% for el in userres %}
+<div class="cart_db">
+    <div class="text-cart">
+        <p>Название пиццы: {{ el[0] }}, Кол-во: {{ el[1] }}. {% if el[0]=='Пицца с грибами' %}350p./шт. Итого: {{350*el[1]}} руб.{% elif el[0]=='Пицца с колбасками и пепперони' %}540p./шт. Итого: {{540*el[1]}} руб. {% elif el[0]=='Пицца с Сыром' %}700p./шт. Итого: {{700*el[1]}} руб. {% endif %}  </p>
+    </div>
+</div>
+{% endfor %}
+<div class="cart_db">
+    <form method="post">
+        <div class="zakaz_db">
+            <p>Итого к оплате: {{ sum }}</p>
+            <input type="submit" class="btn-btn-sucess" value="Оформить заказ">
+        </div>
+    </form>
+</div>
+{% endblock %}

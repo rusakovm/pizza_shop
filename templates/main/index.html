@@ -1,0 +1,111 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная станица{% endblock %}
+
+{% block content %}
+
+
+
+<section>
+    <div class="meiny_conteiner">
+        <div class="meiny_block">
+            <div class="pizza_tomato">
+                <img src="https://preview.colorlib.com/theme/pizza/images/pizza-5.jpg.webp" style="width:50%;height:100%;"  class="img">
+                <div class="pizza_tomato_info">
+
+
+                    <div class="text_info_pizza">
+                        <div class="title_pizza">
+                            <h2>Пицца с грибами</h2>
+                        </div>
+                        <div class="some_text">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                        </div>
+                        <div class="Zakaz">
+                            <button class="button" id="open-model-btn1">Заказать за 350 р.\шт.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pizza_sychi">
+                <img src="https://preview.colorlib.com/theme/pizza/images/pizza-1.jpg.webp"  style="width:50%;height:100%;">
+                <div class="pizza_sychi_info">
+
+
+                    <div class="text_info_pizza">
+                        <h2>Пицца с колбасками и пепперони</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <div class="Zakaz">
+                                <button class="button" id="open-model-btn2">Заказать за 540 р.\шт.</button>
+                            </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="pizza_cheez">
+                <img src="https://preview.colorlib.com/theme/pizza/images/pizza-2.jpg.webp"  style="width:50%;height:100%;" class="img">
+                <div class="pizza_cheez_info">
+
+
+                    <div class="text_info_pizza">
+                        <h2>Пицца с Сыром</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+
+                            <div class="Zakaz">
+                                <button class="button" id="open-model-btn3">Заказать за 700 р.\шт.</button>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <div class="model" id="my-modul1">
+        <div class="model_box">
+            <button class="my-modul-close-btn" id="close-my-modul-btn1">X</button>
+            <h2>Пицца с грибами</h2>
+            <form method="post">
+                <input type="hidden" name="name_pizza" value="Пицца с грибами"><br>
+                <input type="number" min="1" max="20" value="1" name="quantity" id = "quantity1" id = "quantity" class="form-control">
+                <span id="totalPriceEl1"> 0 p</span><br>
+                <input type="submit" class="btn-btn-sucess" value="Заказать">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="model" id="my-modul2">
+        <div class="model_box">
+            <button class="my-modul-close-btn" id="close-my-modul-btn2">X</button>
+            <h2>Пицца с колбасками и пепперони</h2>
+            <form method="post">
+                <input type="hidden" name="name_pizza" value="Пицца с колбасками и пепперони"><br>
+                <input type="number" min="1" max="20" value="1" name="quantity" id = "quantity2" id = "quantity" class="form-control">
+                <span id="totalPriceEl2"> 0 p</span><br>
+                <input type="submit" class="btn-btn-sucess" value="Заказать">
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="model" id="my-modul3">
+        <div class="model_box">
+            <button class="my-modul-close-btn" id="close-my-modul-btn3">X</button>
+            <h2>Пицца с Сыром</h2>
+            <form method="post">
+                <input type="hidden" name="name_pizza" value="Пицца с Сыром"><br>
+                <input type="number" min="1" max="20" value="1" name="quantity" id = "quantity3" id = "quantity" class="form-control">
+                <span id="totalPriceEl3"> 0 p</span><br>
+                <input type="submit" class="btn-btn-sucess" value="заказать">
+            </form>
+        </div>
+    </div>
+<script src="./static/js/index.js"></script>
+<script src="./static/js/Price.js"></script>
+
+{% endblock %}
