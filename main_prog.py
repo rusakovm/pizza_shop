@@ -71,7 +71,7 @@ class Comment (Base):
         return f"{self.comment} writed by {self.writer}"
 
 
-engine = create_engine("sqlite:///mydb.db", echo=True)
+engine = create_engine("sqlite:///mydb.db", echo=True , connect_args={"check_same_thread":False})
 Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine)
@@ -113,6 +113,7 @@ def Buy_Kart():
 @app.route('/createcomment', methods = ['POST', 'GET'])
 def createcomment():
     global user_name_U
+    global user_name_G
     if user_name_G == "None":
         return redirect("/voity")
     else:
@@ -198,8 +199,11 @@ def cart():
 @app.route('/comment')
 def coment():
     global user_name_U
+    #import pdb; pdb.set_trace()
     articles = session.query(Comment.comment, Login.user_name).filter(Comment.writer == Login.Id_akk)
-    return render_template("main/coment_veiw.html", articles=articles, status = user_name_U)
+    for i in articles:
+        print(i)
+    return render_template("main/coment_veiw.html", articles=[i for i in articles], status = user_name_U)
 
 
 
@@ -289,4 +293,4 @@ def buylist():
 
 
 
-app.run()
+app.run('0.0.0.0')
