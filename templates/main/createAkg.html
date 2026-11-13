@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}{% block title %}Оформление — Pizza Shop{% endblock %}{% block content %}<section
+    class="form-page">
+    <div class="form-card"><span class="kicker">ПОЧТИ ГОТОВО</span>
+        <h1>Подтвердить заказ</h1>
+        
+        <form method="post"><button class="btn btn-primary full" type="submit">Подтвердить  заказ →</button>
+        </form>
+        <p class="form-foot"><a href="{{ url_for('hello_world1') }}">← Назад в корзину</a></p>
+    </div>
+</section>{% endblock %}

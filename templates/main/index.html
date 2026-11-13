@@ -1,0 +1,57 @@
+{% extends 'main/layout.html' %}{% block title %}Pizza Shop — горячая пицца{% endblock %}{% block content %}<section
+    class="hero">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <div class="eyebrow"><span class="dot"></span> ПИЦЦА, КОТОРУЮ ХОЧЕТСЯ ПОВТОРИТЬ</div>
+            <h1>Вкус, который <em>собирает</em> вместе.</h1>
+            <p>Хрустящая корочка, тянущийся сыр и любимые сочетания. Выбирай свою пиццу — остальное мы уже придумали.
+            </p>
+            <div class="hero-actions"><a class="btn btn-primary" href="#menu">Выбрать пиццу <span>↗</span></a><a
+                    class="text-link" href="#about">Узнать о нас →</a></div>
+            <div class="hero-stats">
+                <div><strong>03</strong><span>фирменных вкуса</span></div>
+                <div><strong>100%</strong><span>любви к пицце</span></div>
+            </div>
+        </div>
+        <div class="hero-art">
+            <div class="art-ring"></div><img src="{{ url_for('static',filename='img/pepperoni.png') }}"
+                alt="Иллюстрация пиццы пепперони">
+        </div>
+    </div>
+</section>
+<section id="menu" class="menu-section">
+    <div class="container">
+        <div class="section-top">
+            <div><span class="kicker">НАШЕ МЕНЮ</span>
+                <h2>Выбирай любимую</h2>
+            </div>
+            <p>Три вкуса, с которых начинается хорошая история.</p>
+        </div>
+        <div class="cards">{% for pizza in pizzas %}<article class="pizza-card">
+                <div class="pizza-picture"><span class="tag">{{ pizza.tag }}</span><img
+                        src="{{ url_for('static',filename='img/' + pizza.image) }}" alt="{{ pizza.name }}"></div>
+                <div class="pizza-content">
+                    <h3>{{ pizza.name }}</h3>
+                    <p>{{ pizza.description }}</p>
+                    <div class="pizza-bottom"><strong>{{ pizza.price }} ₽</strong>
+                        <form method="post" action="{{ url_for('Buy_Kart') }}"><input type="hidden" name="name_pizza"
+                                value="{{ pizza.name }}"><input type="hidden" name="quantity" value="1"><button
+                                class="add-btn" type="submit"
+                                aria-label="Добавить {{ pizza.name }} в корзину">+</button></form>
+                    </div>
+                </div>
+            </article>{% endfor %}</div>
+    </div>
+</section>
+<section id="about" class="about">
+    <div class="container about-grid">
+        <div><span class="kicker">НЕМНОГО О НАС</span>
+            <h2>Просто хорошая пицца.</h2>
+        </div>
+        <div>
+            <p> Сайт Pizza Shop - Здесь можно зарегистрироваться, добавить позиции в
+                корзину, оформить тестовый заказ и оставить отзыв.</p><a class="text-link"
+                href="{{ url_for('createcomment') }}">Поделиться впечатлением →</a>
+        </div>
+    </div>
+</section>{% endblock %}

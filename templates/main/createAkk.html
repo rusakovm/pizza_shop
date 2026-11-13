@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}{% block title %}Регистрация — Pizza Shop{% endblock %}{% block content %}<section
+    class="form-page">
+    <div class="form-card"><span class="kicker">ПРИСОЕДИНЯЙСЯ</span>
+        <h1>Создать аккаунт</h1>
+        <p>Зарегистрируйся, чтобы собрать свой заказ.</p>
+        <form method="post"><label for="user_name">Логин</label><input id="user_name" name="user_name" minlength="3"
+                required autocomplete="username" placeholder="От 3 символов"><label
+                for="user_passwod">Пароль</label><input id="user_passwod" type="password" name="user_passwod"
+                minlength="8" required autocomplete="new-password" placeholder="От 8 символов"><button
+                class="btn btn-primary full" type="submit">Создать аккаунт →</button></form>
+        <p class="form-foot">Уже есть аккаунт? <a href="{{ url_for('voity') }}">Войти</a></p>
+    </div>
+</section>{% endblock %}

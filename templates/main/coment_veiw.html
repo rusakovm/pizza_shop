@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}{% block title %}Отзывы —  Pizza Shop{% endblock %}{% block content %}<section
+    class="inner-page">
+    <div class="container narrow"><span class="kicker">ОБРАТНАЯ СВЯЗЬ</span>
+        <div class="section-top">
+            <h1>Отзывы</h1><a class="btn btn-primary" href="{{ url_for('createcomment') }}">Написать отзыв →</a>
+        </div>{% for article in articles %}<article class="review"><strong>{{ article.author }}</strong>
+            <p>{{ article.comment }}</p>
+        </article>{% else %}<div class="empty">
+            <h2>Пока нет отзывов</h2>
+            <p>Стань первым, кто оставит впечатление.</p>
+        </div>{% endfor %}
+    </div>
+</section>{% endblock %}

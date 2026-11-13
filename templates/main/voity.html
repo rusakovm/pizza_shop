@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}{% block title %}Вход — Pizza Shop{% endblock %}{% block content %}<section
+    class="form-page">
+    <div class="form-card"><span class="kicker">С ВОЗВРАЩЕНИЕМ</span>
+        <h1>Войти в аккаунт</h1>
+        <p>Продолжи выбирать любимую пиццу.</p>
+        <form method="post"><label for="voity">Логин</label><input id="voity" name="voity" autocomplete="username"
+                required placeholder="Ваш логин"><label for="voity_pass">Пароль</label><input id="voity_pass"
+                type="password" name="voity_pass" autocomplete="current-password" required
+                placeholder="Ваш пароль"><button class="btn btn-primary full" type="submit">Войти →</button></form>
+        <p class="form-foot">Нет аккаунта? <a href="{{ url_for('createAkk') }}">Зарегистрироваться</a></p>
+    </div>
+</section>{% endblock %}

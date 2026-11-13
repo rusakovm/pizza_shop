@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="content">
+                <div class="logo">
+                    xnjnj
+                </div>
+                <div class="nav_list">
+                    <ul class="hd_list">
+                        <li><a href="" class="item">Главная</a></li>
+                        <li><a href="" class="item">Меню</a></li>
+                        <li><a href="" class="item">Сервесы</a></li>
+                        <li><a href="" class="item">Блог</a></li>
+                        <li><a href="" class="item">О нас</a></li>
+                        <li><a href="" class="item">Контакты</a></li>
+
+                    </ul>
+                </div>
+                <div class="shopbuy">
+                    <a href="/createAkk" class="item">Оставить комментатрий</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}{% block title %}Оставить отзыв — Pizza Shop{% endblock %}{% block content %}<section
+    class="form-page">
+    <div class="form-card"><span class="kicker">ОБРАТНАЯ СВЯЗЬ</span>
+        <h1>Оставить отзыв</h1>
+        <p>Расскажи, что думаешь о нашей пицце.</p>
+        <form method="post"><label for="comment">Твой отзыв</label><textarea id="comment" name="comment" minlength="3"
+                maxlength="500" rows="5" required placeholder="Напиши пару слов..."></textarea><button
+                class="btn btn-primary full" type="submit">Опубликовать →</button></form>
+    </div>
+</section>{% endblock %}
