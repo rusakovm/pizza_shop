@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+{% if newcart == True %}
+    <div class="cart_db">
+        <div class="text-new-cart">
+            <p>class="none-cart">ваша история заказов пока пуста.</p>
+        </div>
+    </div>
+{% else %}
+    {% for el in cart_user %}
+        <div class="cart_db">
+            <div class="text-cart">
+                    <p>Название пиццы: {{ el[0] }}, Кол-во: {{ el[2] }}.</p>
+             </div>
+        </div>
+
+    {% endfor %}
+{% endif %}
+{% endblock %}

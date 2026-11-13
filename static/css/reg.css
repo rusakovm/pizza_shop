@@ -1,0 +1,55 @@
+
+.cont_reg {
+  padding: 16px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+}
+
+input[type=checkbox] {
+    margin-top: 20px;
+}
+
+input[type=submit] {
+    margin-top: 20px;
+}
+
+input[type=submit] {
+    color:red
+	cursor: pointer;
+	border: 1px solid #cecece;
+	background: #f6f6f6;
+	box-shadow: inset 0px 20px 20px #ffffff;
+	border-radius: 8px;
+	padding: 8px 14px;
+	width: 200px;
+}
+
+
+
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
